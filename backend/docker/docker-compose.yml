@@ -1,0 +1,11 @@
+services:
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - "5446:5432"
+    environment:
+      - POSTGRES_PASSWORD=supersecret
+      - POSTGRES_USER=me
+      - POSTGRES_DB=db_challenge
+    volumes:
+      - ./db-data/postgres/:/var/lib/postgresql/data
