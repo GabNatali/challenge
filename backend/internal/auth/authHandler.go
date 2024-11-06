@@ -32,7 +32,7 @@ func (a *authHandler) Login(c *gin.Context) {
 		return
 	}
 
-	user, err := a.authService.Login(c, loginRequest)
+	user, err := a.authService.Login(loginRequest)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"status":  http.StatusBadRequest,

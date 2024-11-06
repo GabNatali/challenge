@@ -23,7 +23,7 @@ type AddUserDto struct {
 	Password  string `json:"password"`
 }
 
-func (dto AddUserDto) MapToModel() UserModel {
+func (dto AddUserDto) MapToModel() (UserModel, error) {
 	return NewUser(
 		dto.FirstName,
 		dto.LastName,

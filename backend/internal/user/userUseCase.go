@@ -1,9 +1,7 @@
 package user
 
-import "context"
-
 type UserUseCase interface {
-	Add(ctx context.Context, dto AddUserDto) (uint, error)
+	Add(dto AddUserDto) (uint, error)
 }
 
 func NewUserUseCase(repo UserRepository) UserUseCase {
@@ -16,11 +14,14 @@ type userUseCase struct {
 	repo UserRepository
 }
 
-func (u *userUseCase) Add(ctx context.Context, dto AddUserDto) (uint, error) {
-	user := dto.MapToModel()
+func (u *userUseCase) Add(dto AddUserDto) (uint, error) {
+	user, err := dto.MapToModel()
+	if err != nil {
+		return 0, err
+	}
 
 	if err := user.HashPassword(); err != nil {
 		return 0, err
 	}
-	return u.repo.Add(ctx, user)
+	return u.repo.Add(user)
 }

@@ -32,7 +32,7 @@ func (u *userHandler) AddUser(c *gin.Context) {
 		return
 	}
 
-	userId, err := u.userUseCase.Add(c, addUserDto)
+	userId, err := u.userUseCase.Add(addUserDto)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"status":  http.StatusBadRequest,

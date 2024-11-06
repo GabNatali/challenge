@@ -5,6 +5,7 @@ go 1.22.5
 require gorm.io/gorm v1.25.12
 
 require (
+	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2 // indirect
 	github.com/bytedance/sonic v1.11.6 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect
 	github.com/cloudwego/base64x v0.1.4 // indirect
@@ -40,6 +41,9 @@ require (
 require (
 	github.com/alecthomas/kong v1.3.0 // indirect
 	github.com/gin-gonic/gin v1.10.0
+	github.com/go-ozzo/ozzo-validation v3.6.0+incompatible
+	github.com/go-playground/validator v9.31.0+incompatible
+	github.com/gofrs/uuid v4.4.0+incompatible
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
